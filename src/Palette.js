@@ -3,7 +3,7 @@ import ColorBox from "./ColorBox"
 import "./Palette.css"
  class Palette extends Component {
     render() {
-        const colorBoxes=this.props.colors.map(color=><ColorBox background={color.color} name={color.name} />)
+        const colorBoxes=this.props.palette.colors[300].map(color=><ColorBox background={color.hex} name={color.name} />)
         return (
             <div className="Palette">
                 <div className="Palette-colors">
