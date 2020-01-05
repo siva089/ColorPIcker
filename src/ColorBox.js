@@ -17,7 +17,7 @@ import "./ColorBox.css"
      })
    }
     render() {
-        const {name,background,paletteId,id}=this.props
+        const {name,background,paletteId,id,showLink}=this.props
         const {copied}=this.state
         return (
           <CopyToClipboard text={background} onCopy={this.changeCopyState}>
@@ -33,7 +33,7 @@ import "./ColorBox.css"
                  </div>
                <button className="copy-button">Copy</button>
                  </div>
-                 <Link to={`/palette/${paletteId}/${id}`} onClick={(e)=>e.stopPropagation()}> <span className="see-more">MORE</span></Link>
+                {showLink&&<Link to={`/palette/${paletteId}/${id}`} onClick={(e)=>e.stopPropagation()}> <span className="see-more">MORE</span></Link>}
                 
           </div>
           </CopyToClipboard>
